@@ -1,1 +1,98 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+  
+  
+  .toolbar {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .toolbar img {
+    margin: 0 16px;
+  }
+  
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+  
+  .toolbar #twitter-logo:hover {
+    opacity: 0.8;
+  }
+  
+  
+  a,
+  a:visited,
+  a:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #125699;
+  }
+  
+  
+  
+  footer {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+  }
+  
+  footer a {
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 400;
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+  html, body { height: 100%; }
+  body { margin: 0; font-family:Arial, Helvetica, sans-serif }
+  
+  .pointer{
+  cursor: pointer;
+  }
+  .pull-right{
+  float: right;
+  }
+   label{
+    color:red !important;
+  }
+  html, body { height: 100%; }
+  body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+  .center{
+    text-align: center;
+  }
+  
+  .m-l-10{
+  margin-left: 10px;
+  }
+  .m-l-20{
+    margin-left: 20px;
+    }
+  
+    .m-t-10{
+      margin-top: 10px;
+      }
+      .m-t-20{
+        margin-top: 20px;
+        }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
