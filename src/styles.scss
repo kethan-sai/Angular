@@ -1,6 +1,4 @@
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-  
-  
+
   .toolbar {
     height: 60px;
     display: flex;
@@ -68,14 +66,14 @@
   .pointer{
   cursor: pointer;
   }
+  .grabbing{
+    cursor: grabbing;
+  }
+
   .pull-right{
   float: right;
   }
-   label{
-    color:red !important;
-  }
-  html, body { height: 100%; }
-  body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 
   .center{
     text-align: center;
@@ -94,5 +92,3 @@
       .m-t-20{
         margin-top: 20px;
         }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

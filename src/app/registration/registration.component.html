@@ -1,0 +1,98 @@
+<div *ngIf="!showSummary">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="example-container">
+            <div class="row col-md-12 m-t-20">
+                <div class="col-md-2"><label>Name</label></div>
+                <div class="col-md-4"> <input type="text" [(ngModel)]="empdata.name" placeholder="Enter The Name"></div>
+            </div>
+            <div class="row col-md-12 m-t-20">
+                <div class="col-md-2"> <label>UserName</label></div>
+                <div class="col-md-4"> <input type="text" [(ngModel)]="empdata.username"
+                        placeholder="Enter The User Name">
+                </div>
+            </div>
+            <div class="row col-md-12 m-t-20">
+                <div class="col-md-2"> <label>Age</label></div>
+                <div class="col-md-4"> <input type="number" [(ngModel)]="empdata.age" placeholder="Enter The Age"></div>
+            </div>
+            <div class="row col-md-12 m-t-20">
+                <div class="col-md-2"> <label>
+                        Email
+                    </label></div>
+                <div class="col-md-4"> <input type="email" [(ngModel)]="empdata.email"
+                        placeholder="Enter email address">
+                </div>
+            </div>
+            <div class="row col-md-12 m-t-20">
+                <div class="col-md-2"> <label>
+                        Phone Number
+                    </label></div>
+                <div class="col-md-4"> <input type="text" [(ngModel)]="empdata.phonenumber" placeholder="Phone Number">
+                </div>
+            </div>
+            <div class="row col-md-12 m-t-20">
+                <div class="col-md-2"> <label>
+                        Address
+                    </label></div>
+                <div class="col-md-4"> <textarea type="email" [(ngModel)]="empdata.address"
+                        placeholder="Phone Number"></textarea></div>
+            </div>
+
+            <div>
+                <button class="btn btn-outline-primary" type="button" mat-button (click)="showSummary=true;">Show
+                    Summary</button>
+                <button class="btn btn-outline-warning m-l-20" type="button" mat-button
+                    (click)="clearEmployee();">clear</button>
+                <button class="btn btn-outline-primary " mat-button>Employee List</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+<div *ngIf="showSummary">
+    <div class="row col-md-12 m-t-20">
+        <div class="col-md-4"><label>Name:{{empdata.name}}</label></div>
+    </div>
+    <div class="row col-md-12 m-t-20">
+        <div class="col-md-4"> <label>UserName:{{empdata.username}}</label></div>
+    </div>
+    <div class="row col-md-12 m-t-20">
+        <div class="col-md-4"> <label>Age:{{empdata.age}}</label></div>
+    </div>
+    <div class="row col-md-12 m-t-20">
+        <div class="col-md-4"> <label>
+                Email:{{empdata.email}}
+            </label></div>
+    </div>
+    <div class="row col-md-12 m-t-20">
+        <div class="col-md-4"> <label>
+                Phone Number:{{empdata.phonenumber}}
+            </label></div>
+    </div>
+    <div class="row col-md-12 m-t-20">
+        <div class="col-md-4"> <label>
+                Address:{{empdata.address}}
+            </label></div>
+    </div>
+</div>
+<div>
+    <div [ngSwitch]="inpvalue">
+        <p style='color:blue' *ngSwitchCase="1">You have selected M S Dhoni</p>
+        <p style='color:blue' *ngSwitchCase="2">You have selected Sachin Tendulkar</p>
+        <p style='color:blue' *ngSwitchCase="3">You have selected Satyaprakash Samantaray</p>
+        <p style='color:red' *ngSwitchDefault>Sorry! Invalid selection....</p>
+    </div>
+</div>
+<div class="col-md-2">
+    <div *ngFor="let val of employees">
+        <div (click)=clickEmployeeList(val) [ngClass]="employeeCss" style="border: 1px solid blue;">
+            {{val.name}}
+        </div>
+    </div>
+    <div *ngIf="!employees.length">
+        No Employee List
+    </div>
+    <button class="btn btn-outline-warning m-l-20" type="button" mat-button
+    (click)="employeeCss='grabbing'">Change Cursor</button>
+</div>
