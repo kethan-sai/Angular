@@ -12,6 +12,9 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+// import { ToasterModule } from 'ngx-toaster/src/lib';
+import { ToastrModule } from 'ngx-toastr';
+import { HighlightDirective } from './directive/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import { RegistrationComponent } from './registration/registration.component';
     HomeComponent,
     AboutComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
@@ -30,12 +34,8 @@ import { RegistrationComponent } from './registration/registration.component';
     ReactiveFormsModule,
     MaterialModule,
     BrowserAnimationsModule,
-    // BrowserModule,
-    // AppRoutingModule,
-    // BrowserAnimationsModule,
-    // MaterialModule,
-    // FormsModule,
-    // ReactiveFormsModule,
+    ToastrModule.forRoot({timeOut:5000,positionClass:"toast-bottom-right"})
+    // ToasterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
