@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { registration } from '../types/registration.type'
+// import { ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-registration',
@@ -12,7 +14,6 @@ export class RegistrationComponent implements OnInit {
     address: null, age: null, email: null, name: null, phonenumber: null, username: null
   };
   inpvalue:number=1;
-  employeeCss:string="pointer";
   employees:any=[
     {
       "id": "1",
@@ -76,14 +77,20 @@ export class RegistrationComponent implements OnInit {
       "start_date": "2012/08/06",
       "office": "San Francisco",
       "extn": "9608"
-    }]
+    }];
+  selectedEmployee:string="";
+  birthday = new Date(1988, 3, 15);
   public showSummary:boolean=false;
-  constructor() { }
-
+  constructor(private toastr: ToastrService,) { }
+ 
   ngOnInit(): void {
     this.empdata = {
       address: null, age: null, email: null, name: "Siva", phonenumber: null, username: "SivaKumar"
     };
+    // this.toastr.success('Success');
+    // this.toastr.info('info');
+    // this.toastr.warning('warning');
+    // this.toastr.error('error');
   }
   clearEmployee(){
     this.empdata = {
@@ -91,8 +98,10 @@ export class RegistrationComponent implements OnInit {
     };
   }
   clickEmployeeList(employee:any){
-    console.log(employee);
+    // console.log(employee);
+    this.selectedEmployee=employee.id;
   }
+
 
 
 }
